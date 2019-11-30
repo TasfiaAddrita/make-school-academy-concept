@@ -1,5 +1,10 @@
 from django.urls import path
+from . import views
+
+app_name = 'tutorials'
 
 urlpatterns = [
-    # path('', TutorialListView.as_view(), name='tutorial-list-page'),
+
+    # http://localhost:5000/
+    path('', views.homepage, name='homepage'),
 ]
