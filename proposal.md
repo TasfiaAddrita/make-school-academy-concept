@@ -1,0 +1,1 @@
+For this term's contractor project, I would like to remake Make School's current tutorial app (Academy). Several peers and I have found ourselves struggling to navigate through the web app and go through the tutorials in a productive and efficient manner. I will be using my SPD 1.2's Bootstrap Capstone project to design the frontend and Django to manage the backend.
