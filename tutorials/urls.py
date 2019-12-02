@@ -7,4 +7,5 @@ urlpatterns = [
 
     # http://localhost:5000/
     path('', views.homepage, name='homepage'),
+    path('tutorial', views.tutorialpage, name='tutorialpage')
 ]

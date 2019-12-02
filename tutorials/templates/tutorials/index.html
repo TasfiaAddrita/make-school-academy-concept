@@ -1,1 +1,20 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+<!-- Start: tutorial header -->
+<div class="row" style="/*padding: 0px 80px;*/">
+    <div class="col-md-12">
+        <h2>Tutorials</h2>
+    </div>
+</div>
+<!-- End: tutorial header -->
+
+<div class="row" style="/*padding: 0px 80px;*/">
+    {% for tutorial in tutorials %}
+        {% include "tutorials/partials/tutorial_card.html" %}
+    {% endfor %}
+</div>
+
+
+{% endblock %}

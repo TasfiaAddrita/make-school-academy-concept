@@ -1,7 +1,9 @@
-.body {
-    font-family: 'Gothic A1', sans-serif;
+body {
+    /* font-family: 'Gothic A1', sans-serif; */
+    /* font-family: "Comic Sans MS", Times, serif; */
+    font-family: Proxima Nova, serif;
     font-weight: normal;
-    background-color:red;
+    /* background-color:red; */
 }
 
 .navbar {
@@ -18,7 +20,8 @@ a {
 .footer-clean {
     padding: 50px 0;
     background-color: #fff;
-    color: #4b4c4d
+    color: #4b4c4d;
+    text-transform: uppercase;
 }
     
 .footer-clean h3 {
@@ -113,6 +116,10 @@ a {
 
 .col-3,.col-9 {
     padding:  0
+}
+
+.col-md-9 {
+    padding-left: 30px;
 }
 
 .card {

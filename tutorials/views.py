@@ -12,3 +12,6 @@ def homepage(request):
     # template_name='tutorials/index.html'
 
     return render(request=request, template_name='tutorials/index.html', context={'tutorials': Tutorial.objects.all})
+
+def tutorialpage(request):
+    return render(request=request, template_name='tutorials/tutorial.html', context={'tutorials': Tutorial.objects.all})
