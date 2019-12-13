@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Start: 1 Row 1 Column -->
+<div>
+    <h2>Tutorial Name</h2>
+</div>
+<!-- End: 1 Row 1 Column -->
+
+<!-- Start: Sidebar -->
+<div class="row" style="margin: inherit;margin-right: inherit;margin-left: inherit;margin-bottom: 10px;margin-top: 20px;">
+    
+    <!-- Start: Navigation (left) -->
+    <div class="col-md-3" style="padding: 0px;">
+        {% include "tutorials/partials/module.html" %}
+    </div>
+    <!-- End: Navigation (left) -->
+
+    <!-- Start: Content (right) -->
+    {% include "tutorials/partials/submodule.html" %}
+    <!-- End: Content (right) -->
+
+</div>
+
+
+{% endblock %}

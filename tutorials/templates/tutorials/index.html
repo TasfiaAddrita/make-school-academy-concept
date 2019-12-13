@@ -11,7 +11,7 @@
 <!-- End: tutorial header -->
 
 <div class="row" style="/*padding: 0px 80px;*/">
-    {% for tutorial in tutorials %}
+    {% for tutorial in object_list %}
         {% include "tutorials/partials/tutorial_card.html" %}
     {% endfor %}
 </div>
