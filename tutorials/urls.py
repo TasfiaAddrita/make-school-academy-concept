@@ -6,6 +6,9 @@ app_name = 'tutorials'
 urlpatterns = [
 
     # http://localhost:5000/
-    path('', views.TutorialListView.as_view(), name='homepage'),
-    path('tutorial', views.TutorialDetailView.as_view(), name='tutorialpage')
+    path('', views.TutorialListView.as_view(), name='home-page'),
+    path('tutorial', views.TutorialDetailView.as_view(), name='tutorial-page'),
+    path('create', views.TutorialCreateView.as_view(), name='create-tutorial-page'),
+    # path('create', views.ModuleCreateView.as_view(), name='create-tutorial-page'),
+
 ]

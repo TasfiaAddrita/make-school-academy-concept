@@ -1,5 +1,5 @@
 from django import forms
-from wiki.models import Tutorial
+from tutorials.models import Tutorial, Module, SubModule
 
 
 class TutorialForm(forms.ModelForm):
@@ -7,4 +7,9 @@ class TutorialForm(forms.ModelForm):
     class Meta:
         model = Tutorial
         # fields = '__all__'
-        fields = ['title', 'description']
+        fields = ['title', 'description', 'cover_photo']
+
+class ModuleForm(forms.ModelForm):
+    class Meta:
+        model = Module
+        fields = '__all__'

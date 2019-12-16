@@ -5,6 +5,7 @@ class Tutorial(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     slug = models.CharField(max_length=200, editable=False)
+    cover_photo = models.ImageField(upload_to='uploads/')
     published = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
@@ -36,6 +37,7 @@ class Module(models.Model):
 
 class SubModule(models.Model):
     title = models.CharField(max_length=200)
+    content = models.TextField()
     slug = models.CharField(max_length=200, editable=False)
     # mark_complete = models.BooleanField() # based on student account
     placement = models.IntegerField()
