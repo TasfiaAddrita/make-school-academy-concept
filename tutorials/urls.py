@@ -8,7 +8,7 @@ urlpatterns = [
 
     # http://localhost:5000/
     path('', views.TutorialListView.as_view(), name='home-page'),
-    path('tutorial', views.TutorialDetailView.as_view(), name='tutorial-detail-page'),
+    path('<int:id>', views.TutorialDetailView.as_view(), name='tutorial-detail-page'),
     path('create', views.TutorialCreateView.as_view(), name='create-tutorial-page'),
 
 ]

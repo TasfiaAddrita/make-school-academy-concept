@@ -3,7 +3,7 @@ from django.utils.text import slugify
 
 # Create your models here.
 class Tutorial(models.Model):
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, unique=True)
     description = models.TextField()
     slug = models.CharField(max_length=200, editable=False)
     cover_photo = models.ImageField(upload_to='uploads/')
@@ -21,9 +21,9 @@ class Tutorial(models.Model):
         # Call save on the superclass.
         return super(Tutorial, self).save(*args, **kwargs)
 
-class Tag(models.Model):
-    name = models.CharField(max_length=200)
-    tutorial = models.ForeignKey(Tutorial, on_delete=models.CASCADE) # link to tutorial pk
+# class Tag(models.Model):
+#     name = models.CharField(max_length=200)
+#     tutorial = models.ForeignKey(Tutorial, on_delete=models.CASCADE) # link to tutorial pk
 
 class Module(models.Model):
     title = models.CharField(max_length=200)

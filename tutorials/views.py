@@ -16,12 +16,26 @@ from .forms import TutorialForm, ModuleForm
 
 class TutorialListView(ListView):
     template_name = 'tutorials/index.html'
-    queryset = Tutorial.objects.all()[::-1]
+    model = Tutorial
+
+    def get(self, request):
+        """ GET a list of Pages. """
+        tutorials = self.get_queryset().all()[::-1]
+        return render(request, self.template_name, {
+          'tutorials': tutorials
+    })
 
 class TutorialDetailView(ListView):
     template_name = 'tutorials/tutorial_2.html'
-    # queryset = Tutorial.objects.get(id=1)
     model = Tutorial
+
+    def get(self, request, id):
+        """ Returns a specific wiki page by slug. """
+        tutorial = self.model.objects.get(pk=id)
+        modules = Module.objects.get_queryset().get(tutorial=tutorial.id)
+        return render(request, self.template_name, {
+          'modules': modules
+    })
 
 class TutorialCreateView(CreateView):
     template_name = 'new_tutorial.html'
@@ -33,9 +47,6 @@ class TutorialCreateView(CreateView):
         context = super().get_context_data(**kwargs)
         context['formset'] = self.ModuleFormSet
         return context
-    
-    # def get(self, request, *args, **kwargs):
-    #     form = self.form_class
 
     def post(self, request, *args, **kwargs):
         form = TutorialForm(request.POST)
@@ -47,4 +58,4 @@ class TutorialCreateView(CreateView):
                     module = inline_form.save(commit=False)
                     module.tutorial = tutorial
                     module.save()
-        return HttpResponseRedirect(self.success_url)
+                    return HttpResponseRedirect(self.success_url)
