@@ -16,6 +16,8 @@
       <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
+        <h3>Modules</h3><hr>
+        {{ formset|crispy }}
         <input type="submit" class="btn btn-success" value="submit">
       </form>
     </div>

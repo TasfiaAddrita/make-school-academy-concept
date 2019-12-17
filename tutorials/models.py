@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 class Tutorial(models.Model):
@@ -20,6 +21,10 @@ class Tutorial(models.Model):
         # Call save on the superclass.
         return super(Tutorial, self).save(*args, **kwargs)
 
+class Tag(models.Model):
+    name = models.CharField(max_length=200)
+    tutorial = models.ForeignKey(Tutorial, on_delete=models.CASCADE) # link to tutorial pk
+
 class Module(models.Model):
     title = models.CharField(max_length=200)
     slug = models.CharField(max_length=200, editable=False)
@@ -34,6 +39,11 @@ class Module(models.Model):
 
         # Call save on the superclass.
         return super(Module, self).save(*args, **kwargs)
+    
+    def get_absolute_url(self):
+        """ Returns a fully-qualified path for a page (/my-new-wiki-page). """
+        path_components = {'slug': self.slug}
+        return reverse('tutorial-detail-page', kwargs=path_components)
 
 class SubModule(models.Model):
     title = models.CharField(max_length=200)

@@ -8,8 +8,12 @@ class TutorialForm(forms.ModelForm):
         model = Tutorial
         # fields = '__all__'
         fields = ['title', 'description', 'cover_photo']
+    
+    def __init__(self, *args, **kwargs):
+        super(TutorialForm, self).__init__(*args, **kwargs)
+        self.fields['cover_photo'].required = False
 
 class ModuleForm(forms.ModelForm):
     class Meta:
         model = Module
-        fields = '__all__'
+        exclude = ('tutorial',)
