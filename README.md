@@ -17,7 +17,7 @@ Make School's current Academy app could use some redesign and restructuring. Thi
 -   [x] Integrates an open source app
 -   [ ] Deployed & usable
 -   [x] Includes database migrations in each app
--   [ ] `README` with documentation
+-   [x] `README` with documentation
 -   [x] Public GitHub repo
 -   [ ] No exposed secrets
 
@@ -29,15 +29,19 @@ Make School's current Academy app could use some redesign and restructuring. Thi
 
 ## How to run/setup
 
-Instructions on the setup process needed for running locally.
+Clone/download repo and install modules listed in Piplock
 
 ## How to deploy
 
-How to deploy your own instance live.
+Type in the terminal
+```
+python3 manage.py runserver
+```
 
 ## Live deployments
 
-Where you can find this project in production
+https://ms-tutorial-ta.herokuapp.com/  
+Currently not available
 
 ## How to contribute
 
@@ -48,4 +52,4 @@ my schedule, and any other variable factors.
 
 ## Resources
 
-External resources used and needed for this project to be completed. Always cite your peer developers!
+God and StackOverflow 🙏🏽
