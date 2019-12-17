@@ -2,23 +2,23 @@
 
 ## Description
 
-This project is currently under construction.
+Make School's current Academy app could use some redesign and restructuring. This project attempts to do that.
 
 ## Goals
 
 ### Requirements
 
--   [ ] At least 2 apps in project
--   [ ] At least 2 tests in `tests.py` in each app
--   [ ] Modular design
--   [ ] RESTful API using Django REST Framework
--   [ ] Template-based front-end interface
--   [ ] Has purpose & fulfills proposal
--   [ ] Integrates an open source app
+-   [x] At least 2 apps in project
+-   [x] At least 2 tests in `tests.py` in each app
+-   [x] Modular design
+-   [x] RESTful API using Django REST Framework
+-   [x] Template-based front-end interface
+-   [x] Has purpose & fulfills proposal
+-   [x] Integrates an open source app
 -   [ ] Deployed & usable
--   [ ] Includes database migrations in each app
+-   [x] Includes database migrations in each app
 -   [ ] `README` with documentation
--   [ ] Public GitHub repo
+-   [x] Public GitHub repo
 -   [ ] No exposed secrets
 
 ### Stretch Challenges

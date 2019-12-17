@@ -19,7 +19,6 @@ class TutorialListView(ListView):
     model = Tutorial
 
     def get(self, request):
-        """ GET a list of Pages. """
         tutorials = self.get_queryset().all()[::-1]
         return render(request, self.template_name, {
           'tutorials': tutorials
@@ -30,11 +29,11 @@ class TutorialDetailView(ListView):
     model = Tutorial
 
     def get(self, request, id):
-        """ Returns a specific wiki page by slug. """
         tutorial = self.model.objects.get(pk=id)
         modules = Module.objects.get_queryset().get(tutorial=tutorial.id)
         return render(request, self.template_name, {
-          'modules': modules
+            'tutorial': tutorial,
+            'modules': modules
     })
 
 class TutorialCreateView(CreateView):
@@ -49,7 +48,7 @@ class TutorialCreateView(CreateView):
         return context
 
     def post(self, request, *args, **kwargs):
-        form = TutorialForm(request.POST)
+        form = TutorialForm(request.POST, request.FILES)
         formset = self.ModuleFormSet(request.POST)
         if all([form.is_valid(), formset.is_valid()]):
             tutorial = form.save()

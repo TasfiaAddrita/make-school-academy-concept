@@ -6,7 +6,7 @@ class Tutorial(models.Model):
     title = models.CharField(max_length=200, unique=True)
     description = models.TextField()
     slug = models.CharField(max_length=200, editable=False)
-    cover_photo = models.ImageField(upload_to='uploads/')
+    cover_photo = models.ImageField(upload_to='cover_photos/')
     published = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
